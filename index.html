@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior: smooth">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -64,19 +64,21 @@
           <div class="col-lg-10">
             <div class="mainmenu">
               <ul id="navigation">
-                <li id="home_li" class=active><a  href=index.html>Home</a>
-                <li id="about_li"><a href=#about-us>About</a></li>
-                <li id="service_li"><a href=#our-service>Services</a></li>
-                <li id="project_li"><a href=#our-project>Projects</a></li>
-                <li id="price_li"><a href=#pricing>PRICING</a></li>
-                <li id="contact_li"><a href=#contact-us>Contact</a></li>
+                <li id="home_li" class="active">
+                  <a href="#">Home</a>
+                </li>
+                <li id="about_li"><a href="#about-us">About</a></li>
+                <li id="service_li"><a href="#our-service">Services</a></li>
+                <li id="project_li"><a href="#our-project">Projects</a></li>
+                <li id="price_li"><a href="#pricing">PRICING</a></li>
+                <li id="contact_li"><a href="#contact-us">Contact</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="homepage-slides">
+    <div id="my_home" class="homepage-slides">
       <div class="single-slider-item slide-bg-1">
         <div class="d-table">
           <div class="d-tablecell">
@@ -766,7 +768,7 @@
       </div>
     </section>
 
-    <section class="cleaning-content-block subscription">
+    <section class="cleaning-content-block subscription" id="subscribe">
       <div class="container">
         <div class="row wow fadeInUp" data-wow-delay="0.2s">
           <div class="col-lg-6 offset-lg-3 text-center">
@@ -946,77 +948,87 @@
     <script src="assets/js/waypoints.min.js"></script>
     <script src="assets/js/active.js"></script>
     <script>
-        let links = document.querySelectorAll('.mainmenu ul li');
-        let home = document.getElementById("my_home");
-        let about= document.getElementById("about-us");
-        let services = document.getElementById("our-service");
-        let projects = document.getElementById("our-project");
-        let pricing = document.getElementById("pricing");
-        let contact = document.getElementById("subscribe");
+      let links = document.querySelectorAll(".mainmenu ul li");
+      let home = document.getElementById("my_home");
+      let about = document.getElementById("about-us");
+      let services = document.getElementById("our-service");
+      let projects = document.getElementById("our-project");
+      let pricing = document.getElementById("pricing");
+      let contact = document.getElementById("subscribe");
 
-        window.onscroll = () => {
-            let top = window.scrollY;
+      window.onscroll = () => {
+        let top = window.scrollY;
 
-            let home_offset = home.offsetTop;
-            let home_height = home.offsetHeight;
+        let home_offset = home.offsetTop;
+        let home_height = home.offsetHeight;
 
-            let about_offset = about.offsetTop;
-            let about_height = about.offsetHeight;
+        let about_offset = about.offsetTop;
+        let about_height = about.offsetHeight;
 
-            let service_offset = services.offsetTop;
-            let service_height = services.offsetHeight;
+        let service_offset = services.offsetTop;
+        let service_height = services.offsetHeight;
 
-            let project_offset = projects.offsetTop;
-            let project_height = projects.offsetHeight;
+        let project_offset = projects.offsetTop;
+        let project_height = projects.offsetHeight;
 
-            let price_offset = pricing.offsetTop;
-            let price_height = pricing.offsetHeight;
+        let price_offset = pricing.offsetTop;
+        let price_height = pricing.offsetHeight;
 
-            let contact_offset = contact.offsetTop;
-            let contact_height = contact.offsetHeight;
+        let contact_offset = contact.offsetTop;
+        let contact_height = contact.offsetHeight;
 
-            console.log("contact_offset"  , contact_offset);
-            console.log("top"  , top);
+        console.log("contact_offset", contact_offset);
+        console.log("top", top);
 
-            if(top >= home_offset - 10 && top < home_offset + home_height){
-                console.log('home');
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('home_li').classList.add('active');
-                });
-            }
-            else if(top >= about_offset - 10 && top < about_offset + about_height-10){
-                console.log('cont');
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('about_li').classList.add('active');
-                });
-            }
-            else if(top >= service_offset - 10 && top < service_offset + service_height){
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('service_li').classList.add('active');
-                });
-            }
-            else if(top >= project_offset - 10 && top < project_offset + project_height){
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('project_li').classList.add('active');
-                });
-            }
-            else if(top >= price_offset - 10 && top < price_offset + price_height-10){
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('price_li').classList.add('active');
-                });
-            }
-            else if(top >= contact_offset - 100 && top < contact_offset + contact_height){
-                links.forEach(link => {
-                    link.classList.remove('active');
-                    document.getElementById('contact_li').classList.add('active');
-                });
-            }
+        if (top >= home_offset - 10 && top < home_offset + home_height) {
+          console.log("home");
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("home_li").classList.add("active");
+          });
+        } else if (
+          top >= about_offset - 10 &&
+          top < about_offset + about_height - 10
+        ) {
+          console.log("cont");
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("about_li").classList.add("active");
+          });
+        } else if (
+          top >= service_offset - 10 &&
+          top < service_offset + service_height
+        ) {
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("service_li").classList.add("active");
+          });
+        } else if (
+          top >= project_offset - 10 &&
+          top < project_offset + project_height
+        ) {
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("project_li").classList.add("active");
+          });
+        } else if (
+          top >= price_offset - 10 &&
+          top < price_offset + price_height - 10
+        ) {
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("price_li").classList.add("active");
+          });
+        } else if (
+          top >= contact_offset - 100 &&
+          top < contact_offset + contact_height
+        ) {
+          links.forEach((link) => {
+            link.classList.remove("active");
+            document.getElementById("contact_li").classList.add("active");
+          });
         }
+      };
     </script>
   </body>
 </html>
