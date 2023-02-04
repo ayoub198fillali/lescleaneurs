@@ -6808,6 +6808,7 @@ a.lightbox-gallery::after {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
 .form-group .field {
@@ -6815,7 +6816,8 @@ a.lightbox-gallery::after {
   display: flex;
   position: relative;
   margin: 1rem;
-  width: 100%;
+  width: 90%;
+  justify-content: center;
 }
 form .field input,
 form .message textarea {
@@ -6823,15 +6825,15 @@ form .message textarea {
   padding: 0 16px 0 48px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  /* background: #949494; */
   border: none;
   border-bottom: 2px solid #f8b604;
   color: #f8b604;
+  width: 90%;
 }
 form i {
   position: absolute;
   top: 50%;
-  left: 18px;
+  left: 45px;
   color: #f8b604;
   font-size: 19px !important;
   pointer-events: none;
@@ -6841,7 +6843,7 @@ form i {
 form .message {
   position: relative;
   margin: 1rem;
-  width: 100%;
+  width: 80%;
 }
 
 form .message textarea {
@@ -6863,4 +6865,163 @@ body.swal2-toast-shown .swal2-container.swal2-top-end,
 body.swal2-toast-shown .swal2-container.swal2-top-right {
   z-index: 99999999;
   top: 90px;
+}
+
+/*  */
+.twoImg {
+  display: flex;
+  /* gap: 10px; */
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  height: fit-content !important;
+  margin: 50px 0 !important;
+}
+
+.twoImg .container {
+  position: relative;
+
+  border: 2px solid white;
+}
+.twoImg .container .img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background-size: 900px 100%; */
+}
+/* Images Before After */
+.twoImg .container #background-img1 {
+  background-image: url("../img/img1F.jpg");
+}
+.twoImg .container #foreground-img1 {
+  background-image: url("../img/img1D.jpg");
+  width: 50%;
+}
+/*  */
+.twoImg .container #background-img2 {
+  background-image: url("../img/img2F.jpg");
+}
+.twoImg .container #foreground-img2 {
+  background-image: url("../img/img2D.jpg");
+  width: 50%;
+}
+/*  */
+.twoImg .container #background-img3 {
+  background-image: url("../img/img3F.jpg");
+}
+.twoImg .container #foreground-img3 {
+  background-image: url("../img/img3D.jpg");
+  width: 50%;
+}
+
+/* Images Before After */
+.twoImg .container .slider {
+  position: absolute;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 100%;
+  background: rgba(242, 242, 242, 0.3);
+  outline: none;
+  margin: 0;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  left: 0;
+}
+.twoImg .container .slider:hover {
+  background: rgba(242, 242, 242, 0.1);
+}
+.twoImg .container .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+.twoImg .container .slider::-moz-range-thumb {
+  width: 6px;
+  height: 600px;
+  background: white;
+  cursor: pointer;
+}
+.twoImg .container .slider-button {
+  pointer-events: none;
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  left: calc(50% - 18px);
+  top: calc(50% - 18px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.twoImg .container .slider-button:after {
+  content: "";
+  padding: 3px;
+  display: inline-block;
+  border: solid #5d5d5d;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+}
+.twoImg .container .slider-button:before {
+  content: "";
+  padding: 3px;
+  display: inline-block;
+  border: solid #5d5d5d;
+  border-width: 0 2px 2px 0;
+  transform: rotate(135deg);
+}
+
+@media (min-width: 340px) {
+  form i {
+    left: 32px !important;
+  }
+
+  .message i {
+    left: 10px !important;
+  }
+
+  .twoImg .container {
+    width: 320px;
+    height: 320px;
+  }
+  .twoImg {
+    gap: 15px !important;
+  }
+  .twoImg .container .img {
+    background-size: 330px 100%;
+  }
+}
+
+@media (min-width: 576px) {
+  .twoImg .container {
+    width: 500px;
+    height: 500px;
+  }
+  .twoImg {
+    gap: 20px !important;
+  }
+  .twoImg .container .img {
+    background-size: 500px 100%;
+  }
+}
+@media (min-width: 768px) {
+  .twoImg .container {
+    width: 520px;
+    height: 520px;
+  }
+  .twoImg {
+    gap: 25px !important;
+  }
+  .twoImg .container .img {
+    background-size: 700px 100%;
+  }
 }
