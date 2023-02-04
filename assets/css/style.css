@@ -1131,6 +1131,7 @@ a.lightbox-gallery::after {
 }
 .who-we-info .single-info p {
   margin: 0;
+  text-align: justify;
 }
 .who-we-info .list-inline li {
   font-size: 17px;
@@ -1452,9 +1453,11 @@ a.lightbox-gallery::after {
 .choose-reasons h4 {
   margin: 0 0 10px;
   line-height: 25px;
+  text-align: justify;
 }
 .choose-reasons p {
   margin: 0;
+  text-align: justify;
 }
 .achivment-section {
   background-image: url(../img/achivment-section-bg.jpg);
