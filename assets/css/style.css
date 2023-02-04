@@ -183,6 +183,8 @@ input[type="submit"] {
   color: #444;
   font-weight: 500;
   margin: 20px 0 0;
+  text-align: justify;
+  text-align-last: center;
 }
 .section-title2 {
   text-align: center;
