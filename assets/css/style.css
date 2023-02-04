@@ -1,5 +1,17 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,700|Open+Sans:300,300i,400,400i,600,600i,700,700i,800";
 @import "https://fonts.googleapis.com/css?family=Teko&amp;display=swap";
+
+*::-webkit-scrollbar {
+  width: 0.5rem;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: #f8b604;
+}
+
 body {
   font-family: open sans, sans-serif;
   line-height: 26px;
@@ -522,7 +534,10 @@ a.lightbox-gallery::after {
 .mainmenu-area .mainmenu ul li {
   display: inline-block;
   position: relative;
+  border-bottom: 0.2rem solid #f8b604;
+  padding-bottom: -2rem;
 }
+
 .mainmenu-area .mainmenu ul li a {
   font-size: 14px;
   display: block;
@@ -2207,12 +2222,24 @@ a.lightbox-gallery::after {
 .subscribe-form input {
   border: medium;
   border-radius: 100px;
-  color: #fff;
+  /* color: #f8b604; */
+  height: 55px;
+  padding: 15px 25px;
+
+  width: 100%;
+}
+
+.subscribe-form textarea {
+  border: medium;
+  border-radius: 10px;
+  color: #f8b604;
   height: 55px;
   padding: 15px 25px;
   text-transform: uppercase;
   width: 100%;
+  background: white;
 }
+
 .subscribe-form input::-webkit-input-placeholder {
   color: #fff;
 }
@@ -2234,15 +2261,18 @@ a.lightbox-gallery::after {
   background-color: #222;
   color: #fff;
   height: 46px;
+  width: 150px;
   padding: 0 25px;
-  position: absolute;
+  /* position: absolute; */
   right: 4px;
   top: 4px;
   text-transform: capitalize;
+  margin: auto;
 }
-.subscribe-form button button:hover {
+.subscribe-form button:hover {
   background-color: #fff;
   color: #222;
+  transition: 0.5s;
 }
 .subscribe-section {
   padding: 50px 0 65px;
@@ -4484,7 +4514,7 @@ a.lightbox-gallery::after {
 .contact-section .contact-form::placeholder {
   font-size: 14px;
   font-weight: 600;
-  color: #5f5f5f;
+  color: white;
   text-transform: capitalize;
 }
 .contact-section .contact-form .form-group {
@@ -6771,4 +6801,66 @@ a.lightbox-gallery::after {
 }
 .cw-footer p a:hover {
   text-decoration: underline;
+}
+
+/* ----------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-group .field {
+  height: 50px;
+  display: flex;
+  position: relative;
+  margin: 1rem;
+  width: 100%;
+}
+form .field input,
+form .message textarea {
+  outline: none;
+  padding: 0 16px 0 48px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  /* background: #949494; */
+  border: none;
+  border-bottom: 2px solid #f8b604;
+  color: #f8b604;
+}
+form i {
+  position: absolute;
+  top: 50%;
+  left: 18px;
+  color: #f8b604;
+  font-size: 19px !important;
+  pointer-events: none;
+  transform: translateY(-50%);
+}
+
+form .message {
+  position: relative;
+  margin: 1rem;
+  width: 100%;
+}
+
+form .message textarea {
+  min-height: 130px;
+  max-height: 230px;
+  max-width: 100%;
+  min-width: 100%;
+  padding: 12px 20px 0 48px;
+}
+
+form input::placeholder,
+form textarea::placeholder {
+  color: #f8b604 !important;
+}
+
+/* Notif */
+
+body.swal2-toast-shown .swal2-container.swal2-top-end,
+body.swal2-toast-shown .swal2-container.swal2-top-right {
+  z-index: 99999999;
+  top: 90px;
 }

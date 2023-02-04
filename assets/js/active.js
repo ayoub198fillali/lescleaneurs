@@ -352,54 +352,55 @@
   jQuery(window).on("load", function () {
     jQuery(".preloader-wrap").fadeOut(500);
   });
-  $("#contatc_form").submit(function (event) {
-    event.preventDefault();
-    var name = $("#contact_name").val();
-    var email = $("#contact_email").val();
-    var sub = $("#contact_subject").val();
-    var phone = $("#contact_phone").val();
-    var message = $("#contact_message").val();
-    var recaptcha = $("#g-recaptcha-response").val();
-    if (
-      name == "" ||
-      email == "" ||
-      message == "" ||
-      name == " " ||
-      message == " " ||
-      recaptcha == " " ||
-      sub == " " ||
-      phone == " "
-    ) {
-      jQuery("#contact_send_status").removeClass("message_send");
-      jQuery("#contact_send_status").addClass("message_notsend");
-      jQuery("#contact_send_status").text(
-        "Please fill all fields with correct data."
-      );
-    } else {
-      var formData = $("#contatc_form").serialize();
-      $.ajax({
-        type: "POST",
-        url: $("#contatc_form").attr("action"),
-        data: formData,
-        success: function (data) {
-          jQuery('form[name="myform"]')[0].reset();
-        },
-      })
-        .done(function (response) {
-          $("#contact_send_status").removeClass("message_notsend");
-          $("#contact_send_status").addClass("message_send");
-          $("#contact_send_status").html(
-            "<div class='alert alert-success' role='alert'>Your email successfully Sent ! Thank you.</div>"
-          );
-          $("#contact_send_status").fadeOut(3000);
-        })
-        .fail(function (data) {
-          jQuery("#contact_send_status").removeClass("message_send");
-          jQuery("#contact_send_status").addClass("message_notsend");
-          jQuery("#contact_send_status").html(
-            "<div class='alert alert-danger' role='alert'>Something wrong please try again!</div>"
-          );
-        });
-    }
-  });
+
+  //   $("#contatc_form").submit(function (event) {
+  //     event.preventDefault();
+  //     var name = $("#contact_name").val();
+  //     var email = $("#contact_email").val();
+  //     var sub = $("#contact_subject").val();
+  //     var phone = $("#contact_phone").val();
+  //     var message = $("#contact_message").val();
+  //     var recaptcha = $("#g-recaptcha-response").val();
+  //     if (
+  //       name == "" ||
+  //       email == "" ||
+  //       message == "" ||
+  //       name == " " ||
+  //       message == " " ||
+  //       recaptcha == " " ||
+  //       sub == " " ||
+  //       phone == " "
+  //     ) {
+  //       jQuery("#contact_send_status").removeClass("message_send");
+  //       jQuery("#contact_send_status").addClass("message_notsend");
+  //       jQuery("#contact_send_status").text(
+  //         "Please fill all fields with correct data."
+  //       );
+  //     } else {
+  //       var formData = $("#contatc_form").serialize();
+  //       $.ajax({
+  //         type: "POST",
+  //         url: $("#contatc_form").attr("action"),
+  //         data: formData,
+  //         success: function (data) {
+  //           jQuery('form[name="myform"]')[0].reset();
+  //         },
+  //       })
+  //         .done(function (response) {
+  //           $("#contact_send_status").removeClass("message_notsend");
+  //           $("#contact_send_status").addClass("message_send");
+  //           $("#contact_send_status").html(
+  //             "<div class='alert alert-success' role='alert'>Your email successfully Sent ! Thank you.</div>"
+  //           );
+  //           $("#contact_send_status").fadeOut(3000);
+  //         })
+  //         .fail(function (data) {
+  //           jQuery("#contact_send_status").removeClass("message_send");
+  //           jQuery("#contact_send_status").addClass("message_notsend");
+  //           jQuery("#contact_send_status").html(
+  //             "<div class='alert alert-danger' role='alert'>Something wrong please try again!</div>"
+  //           );
+  //         });
+  //     }
+  //   });
 })(jQuery);
