@@ -2023,6 +2023,7 @@ a.lightbox-gallery::after {
   color: #575757;
   font-size: 14px;
   font-style: italic;
+  text-align: justify;
 }
 .testimonial-slides .testimonial-slide-item h3 {
   color: #202020;
@@ -6913,6 +6914,14 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
 }
 .twoImg .container #foreground-img3 {
   background-image: url("../img/img3D.jpg");
+  width: 50%;
+}
+/*  */
+.twoImg .container #background-img4 {
+  background-image: url("../img/img4F.jpg");
+}
+.twoImg .container #foreground-img4 {
+  background-image: url("../img/img4D.jpg");
   width: 50%;
 }
 

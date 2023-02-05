@@ -21,3 +21,11 @@ $("#slider3").on("input change", (e) => {
   // Update the position of the slider button
   $("#slider-button3").css("left", `calc(${sliderPos}% - 18px)`);
 });
+
+$("#slider4").on("input change", (e) => {
+  const sliderPos = e.target.value;
+  // Update the width of the foreground image
+  $("#foreground-img4").css("width", `calc(${sliderPos}% - 4px)`);
+  // Update the position of the slider button
+  $("#slider-button4").css("left", `calc(${sliderPos}% - 18px)`);
+});
