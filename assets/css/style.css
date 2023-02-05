@@ -7023,6 +7023,10 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
   }
 }
 @media (min-width: 768px) {
+  .myPrices {
+    max-width: 50%;
+  }
+
   .twoImg .container {
     width: 520px;
     height: 520px;
@@ -7033,4 +7037,9 @@ body.swal2-toast-shown .swal2-container.swal2-top-right {
   .twoImg .container .img {
     background-size: 700px 100%;
   }
+}
+
+/* Prices */
+.myPrices {
+  flex: 50%;
 }
