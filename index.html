@@ -70,12 +70,12 @@
             <div class="mainmenu">
               <ul id="navigation">
                 <li id="home_li" class="active">
-                  <a href="#">Home</a>
+                  <a href="#">Accueil</a>
                 </li>
-                <li id="about_li"><a href="#about-us">About</a></li>
+                <li id="about_li"><a href="#about-us">À Propos</a></li>
                 <li id="service_li"><a href="#our-service">Services</a></li>
                 <li id="price_li"><a href="#pricing">PRICING</a></li>
-                <li id="avantapres_li"><a href="#avantapres">Work</a></li>
+                <li id="avantapres_li"><a href="#avantapres">Travail</a></li>
                 <li id="contact_li"><a href="#subscribe">Contact</a></li>
               </ul>
             </div>
@@ -1017,17 +1017,15 @@
             <div class="col-lg-4 col-md-4 text-center">
               <div class="footer-wid footer-menu pl-30">
                 <h3 class="footer-wid-title">Quick Links</h3>
-                <ul>
+                <ul style="width: fit-content; margin: auto; text-align: left">
                   <li>
                     <a href="#"
-                      ><i class="fa fa-chevron-circle-right"></i> home
-                      &nbsp&nbsp&nbsp</a
-                    >
+                      ><i class="fa fa-chevron-circle-right"></i> Accueil
+                    </a>
                   </li>
                   <li>
                     <a href="#about-us"
-                      ><i class="fa fa-chevron-circle-right"></i>
-                      About&nbsp&nbsp&nbsp&nbsp</a
+                      ><i class="fa fa-chevron-circle-right"></i> À Propos</a
                     >
                   </li>
                   <li>
@@ -1043,8 +1041,7 @@
                   </li>
                   <li>
                     <a href="#avantapres"
-                      ><i class="fa fa-chevron-circle-right"></i>
-                      Work&nbsp&nbsp&nbsp&nbsp&nbsp</a
+                      ><i class="fa fa-chevron-circle-right"></i> Travail</a
                     >
                   </li>
                   <li>
@@ -1175,10 +1172,10 @@
       // --------- Email
       $("#contact-form").submit(function (event) {
         event.preventDefault();
-        emailjs.init("osB0muvAZQW21XMQq");
-        let template = "template_design";
+        emailjs.init("rEW-vzIVv7EECSi9L");
+        let template = "template_3uxgeep";
 
-        emailjs.sendForm("service_afdqcx3", template, "#contact-form").then(
+        emailjs.sendForm("service_djttucu", template, "#contact-form").then(
           function (response) {
             console.log("SUCCESS!", response.status, response.text);
             document.getElementById("contact-form").reset();
